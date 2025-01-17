@@ -1,5 +1,7 @@
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/5587e9aa-64be-4e9f-a416-baf8d184d9c5" alt="logo" width="500" />
+</p>
 
-![Screenshot 2025-01-12 at 7 03 38 PM](https://github.com/user-attachments/assets/5587e9aa-64be-4e9f-a416-baf8d184d9c5)
 # Azeroth
 
 Azeroth is the next iteration of Celestra where the player will embarl traversing a world filled with danger, mystery, and treasures. Join on an epic journey through sprawling environments, treacherous dungeons, and monster infested lands in pursuit of the legendary diamond known as **Azeroth**.
