@@ -117,7 +117,8 @@ public class Player extends Entity {
 
     public void interactNPC(int i) {
         if (i != 8) {
-            System.out.println("hitting");
+            gp.gameState = gp.dialogueState;
+            
         }
     }
 
