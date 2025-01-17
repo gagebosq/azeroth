@@ -16,6 +16,7 @@ public class UI {
     public String message = "";
     int messageCounter = 0;
     public boolean gameFinished = false;
+    public String currentDialogue = "";
 
 
     public UI(GamePanel gp) {
@@ -46,7 +47,7 @@ public class UI {
         }
         //dialogue
         if (gp.gameState == gp.dialogueState) {
-            drawDialogueScreem();
+            drawDialogueScreen();
         }
 
     }
@@ -60,13 +61,17 @@ public class UI {
         g2.drawString(text, x, y);
     }
 
-    public void drawDialogueScreem() {
+    public void drawDialogueScreen() {
         int x = gp.tileSize * 2;
         int y = gp.tileSize / 2;
         int width = gp.screenWidth - (gp.tileSize * 4);
         int height = gp.tileSize * 4;
 
+        g2.setFont(g2.getFont().deriveFont(Font.PLAIN, 32F));
         drawSubWindow(x, y, width, height);
+        x += gp.tileSize;
+        y += gp.tileSize;
+        g2.drawString(currentDialogue, x, y);
 
     }
 
