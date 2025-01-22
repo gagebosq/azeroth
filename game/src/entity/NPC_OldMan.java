@@ -29,13 +29,15 @@ public class NPC_OldMan extends Entity {
     }
 
     public void setDialogue() {
+        String newline = System.lineSeparator();
+
         dialogues[0] = "Hello there.";
-        dialogues[1] = "How did you even get on this island \nlol.";
-        dialogues[2] = "I feel im too old to join you... may your luck steer your deep into the treasures of this island.";
+        dialogues[1] = "How did you even get on this \nisland lol.";
+        dialogues[2] = "I feel im too old to join you... \nmay your luck steer you deep into \nthe treasures of this island.";
         dialogues[3] = "God damn im old as shit.";
-        dialogues[4] = "Shall you find the hidden treasure...give me some.";
-        dialogues[5] = "Im a wizard btw... ive got some tricks ;)";
-        dialogues[6] = "Fear the skeleton they call... mr. skeleton guy...";
+        dialogues[4] = "Shall you find the hidden \ntreasure...give me some.";
+        dialogues[5] = "Im a wizard btw... ive got \nsome tricks ;)";
+        dialogues[6] = "Fear the skeleton they call...\nmr. skeleton guy...";
 
 
     }
@@ -63,26 +65,7 @@ public class NPC_OldMan extends Entity {
     }
 
     public void speak() {
-        if (dialogues[dialogueIndex] == null) {
-            dialogueIndex = 0;
-        }
-        gp.ui.currentDialogue = dialogues[dialogueIndex];
-        dialogueIndex++;
-
-        switch (gp.player.direction) {
-            case "up":
-                direction = "down";
-                break;
-            case "down":
-                direction = "up";
-                break;
-            case "left":
-                direction = "right";
-                break;
-            case "right":
-                direction = "left";
-                break;
-        }
+        super.speak();
 
     }
 }
