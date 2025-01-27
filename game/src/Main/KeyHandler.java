@@ -19,6 +19,71 @@ public class KeyHandler implements KeyListener {
     @Override
     public void keyPressed(KeyEvent e) {
         int code = e.getKeyCode();
+        //title
+        if (gp.gameState == gp.titleState) {
+
+            if (gp.ui.titleScreenState == 0) {
+                if (code == KeyEvent.VK_W || code == KeyEvent.VK_UP) {
+                    gp.ui.commandNumber--;
+                    if (gp.ui.commandNumber < 0) {
+                        gp.ui.commandNumber = 2;
+                    }
+                }
+
+                if (code == KeyEvent.VK_S || code == KeyEvent.VK_DOWN) {
+                    gp.ui.commandNumber++;
+                    if (gp.ui.commandNumber > 2) {
+                        gp.ui.commandNumber = 0;
+                    }
+                }
+                if (code == KeyEvent.VK_ENTER) {
+                    if (gp.ui.commandNumber == 0) {
+                        gp.ui.titleScreenState = 1;
+                    }
+                    if (gp.ui.commandNumber == 1) {
+                        //load game
+                    }
+                    if (gp.ui.commandNumber == 2) {
+                        System.exit(0);
+                    }
+                }
+            } else if (gp.ui.titleScreenState == 1) {
+                if (code == KeyEvent.VK_W || code == KeyEvent.VK_UP) {
+                    gp.ui.commandNumber--;
+                    if (gp.ui.commandNumber < 0) {
+                        gp.ui.commandNumber = 3;
+                    }
+                }
+
+                if (code == KeyEvent.VK_S || code == KeyEvent.VK_DOWN) {
+                    gp.ui.commandNumber++;
+                    if (gp.ui.commandNumber > 3) {
+                        gp.ui.commandNumber = 0;
+                    }
+                }
+                if (code == KeyEvent.VK_ENTER) {
+                    if (gp.ui.commandNumber == 0) {
+                        System.out.println("Fighter stuff");
+                        gp.gameState = gp.playState;
+                        gp.playMusic(0);
+                    }
+                    if (gp.ui.commandNumber == 1) {
+                        //load
+                        System.out.println("Fighter stuff");
+                        gp.gameState = gp.playState;
+                        gp.playMusic(0);
+                    }
+                    if (gp.ui.commandNumber == 2) {
+                        System.out.println("Fighter stuff");
+                        gp.gameState = gp.playState;
+                        gp.playMusic(0);
+                    }
+                    if (gp.ui.commandNumber == 3) {
+                        gp.ui.titleScreenState = 0;
+                    }
+                }
+            }
+        }
         //play
         if (gp.gameState == gp.playState) {
 
@@ -96,3 +161,4 @@ public class KeyHandler implements KeyListener {
 
     }
 }
+
